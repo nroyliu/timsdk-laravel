@@ -1,0 +1,26 @@
+{
+    "name": "nroyliu/timapi-laravel",
+    "description": "TimApiHelper",
+    "type": "project",
+    "authors": [
+        {
+            "name": "nroyliu",
+            "email": "nroycc@163.com"
+        }
+    ],
+    "require": {
+        "tencent/tls-sig-api-v2": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nroyliu\\Timapi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nroyliu\\Timapi\\TimapiProvider"
+            ]
+        }
+    }
+}
