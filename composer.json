@@ -1,5 +1,5 @@
 {
-    "name": "nroyliu/timapi-laravel",
+    "name": "nroyliu/timsdk-laravel",
     "description": "TimApiHelper",
     "type": "project",
     "authors": [
@@ -13,13 +13,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Nroyliu\\Timapi\\": "src/"
+            "Nroyliu\\Timsdk\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Nroyliu\\Timapi\\TimapiProvider"
+                "Nroyliu\\Timsdk\\TimsdkProvider"
             ]
         }
     }

@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Nroyliu\Timapi;
+namespace Nroyliu\Timsdk;
 
 
 use Illuminate\Support\Facades\Http;
 
-class Timapi
+class Tim
 {
     private static $appid = null;
     private static $key = null;
@@ -15,10 +15,11 @@ class Timapi
 
     public function __construct()
     {
-        self::$appid = config("timapi.appid");
-        self::$key = config("timapi.key");
-        self::$admin = config("timapi.admin");
+        self::$appid = config("tim.appid");
+        self::$key = config("tim.key");
+        self::$admin = config("tim.admin");
         self::$sig = self::getSig('admin');
+        echo config("tim.appid");
     }
 
     /**
@@ -29,9 +30,13 @@ class Timapi
      */
     public static function getSig($user)
     {
-        $api = new \Tencent\TLSSigAPIv2(self::$appid, self::$key);
-        $sig = $api->genSig($user);
-        return $sig;
+        if (self::$appid != null && self::$key != null){
+            $api = new \Tencent\TLSSigAPIv2(self::$appid, self::$key);
+            $sig = $api->genSig($user);
+            return $sig;
+        }else{
+            return "appid 和 key 不能为空";
+        }
     }
 
     public static function request($method, $data)
