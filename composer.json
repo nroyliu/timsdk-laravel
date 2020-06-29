@@ -2,6 +2,7 @@
     "name": "nroyliu/timsdk-laravel",
     "description": "TimApiHelper",
     "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "nroyliu",
