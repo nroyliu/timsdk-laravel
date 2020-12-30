@@ -19,7 +19,6 @@ class Tim
         self::$key = config("tim.key");
         self::$admin = config("tim.admin");
         self::$sig = self::getSig('admin');
-        echo config("tim.appid");
     }
 
     /**
