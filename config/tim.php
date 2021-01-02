@@ -2,5 +2,7 @@
 return [
     "appid" => '',
     "key" => '',
-    "admin" => ''
+    "admin" => '',
+    "push_domain" => '',
+    "player_domain" => '',
 ];

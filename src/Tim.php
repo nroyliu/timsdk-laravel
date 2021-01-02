@@ -64,4 +64,36 @@ class Tim
         ];
         return self::request('v4/group_open_http_svc/create_group', $data);
     }
+
+    public static function get_push_url($streamName)
+    {
+        $domain = config('tim.push_domain');
+        $key    = config('tim.key');
+        $time   = date('Y-m-d H:i:s',strtotime('+1 day'));
+        $txTime = strtoupper(base_convert(strtotime($time), 10, 16));
+        //txSecret = MD5( KEY + streamName + txTime )
+        $txSecret = md5($key . $streamName . $txTime);
+        $ext_str  = "?" . http_build_query(array(
+                "txSecret" => $txSecret,
+                "txTime"   => $txTime
+            ));
+
+        return "rtmp://" . $domain . "/live/" . $streamName . (isset($ext_str) ? $ext_str : "");
+    }
+
+    public static function get_player_url($streamName)
+    {
+        $domain = config('tim.player_domain');
+        $key    = config('tim.key');
+        $time   = date('Y-m-d H:i:s',strtotime('+1 day'));
+        $txTime = strtoupper(base_convert(strtotime($time), 10, 16));
+        //txSecret = MD5( KEY + streamName + txTime )
+        $txSecret = md5($key . $streamName . $txTime);
+        $ext_str  = "?" . http_build_query(array(
+                "txSecret" => $txSecret,
+                "txTime"   => $txTime
+            ));
+
+        return "rtmp://" . $domain . "/live/" . $streamName . (isset($ext_str) ? $ext_str : "");
+    }
 }
