@@ -65,6 +65,13 @@ class Tim
         return self::request('v4/group_open_http_svc/create_group', $data);
     }
 
+    public static function get_online_member_num($group_id){
+        $data = [
+            "GroupId" => $group_id
+        ];
+        return self::request('v4/group_open_http_svc/get_online_member_num', $data);
+    }
+
     public static function get_push_url($streamName)
     {
         $domain = config('tim.push_domain');
