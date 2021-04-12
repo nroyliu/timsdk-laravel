@@ -31,7 +31,7 @@ class Tim
     {
         if (self::$appid != null && self::$key != null){
             $api = new \Tencent\TLSSigAPIv2(self::$appid, self::$key);
-            $sig = $api->genSig($user);
+            $sig = $api->genUserSig($user);
             return $sig;
         }else{
             return "appid 和 key 不能为空";
