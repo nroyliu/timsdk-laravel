@@ -7,24 +7,24 @@ namespace Composer\Autoload;
 class ComposerStaticInite9054c9bfaf027d9a4c4d9922a222d53
 {
     public static $prefixLengthsPsr4 = array (
-        'T' =>
+        'T' => 
         array (
             'Tencent\\' => 8,
         ),
-        'N' =>
+        'N' => 
         array (
             'Nroyliu\\Timsdk\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Tencent\\' =>
+        'Tencent\\' => 
         array (
-            0 => __DIR__ . '/..',
+            0 => __DIR__ . '/..' . '/tencent/tls-sig-api-v2/src',
         ),
-        'Nroyliu\\Timsdk\\' =>
+        'Nroyliu\\Timsdk\\' => 
         array (
-            0 => __DIR__ . '/../..',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
